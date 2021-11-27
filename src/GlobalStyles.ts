@@ -9,6 +9,10 @@ export default createGlobalStyle`
         font-family: "Annie", "Fredericka", "Brush";
     }
 
+    body {
+        background-color: black;
+    }
+
     #root {
         margin: 0 auto;
     }

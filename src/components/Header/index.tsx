@@ -1,4 +1,11 @@
-import Logo from "./Logo"
-import Navbar from "./Navbar"
+import Three from "./Three"
 
-export {Logo, Navbar}
+const Header = (): JSX.Element => {
+    return (
+        <>
+            <Three />
+        </>
+    )
+}
+
+export default Header

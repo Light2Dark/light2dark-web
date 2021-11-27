@@ -1,9 +1,11 @@
 import React from 'react';
 import GlobalFonts from './assets/fonts/fonts'
 import GlobalStyles from './GlobalStyles';
-import {Outlet, Link} from "react-router-dom"
+import {ThemeProvider} from 'styled-components';
+import theme from "./my-theme"
+import Three from "./components/Header/index"
 
-import {Logo, Navbar} from "./components/Header/index"
+import Navbar from "./components/Main/Navbar"
 
 function App() {
   return (
@@ -11,18 +13,20 @@ function App() {
       <GlobalFonts />
       <GlobalStyles />
 
-      <h2>Hi!</h2>
+      <ThemeProvider theme = {theme}>
+        <header>
+          <Three />
+        </header>
 
-      <main>
-        <nav>
-          <Link to = "/all">all.</Link>
-          <Link to = "/web">web.</Link>
-          <Link to = "/games">games.</Link>
-          <Link to = "/writing">writing.</Link>
-          <Link to = "/contact">contact.</Link>
-        </nav>
-      </main>
-      <Outlet />
+        <main>
+          <Navbar logoName = "sham;" />
+        </main>
+
+        <footer>
+
+        </footer>
+      </ThemeProvider>
+      
 
     </div>
   );

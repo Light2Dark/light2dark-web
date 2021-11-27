@@ -1,12 +1,15 @@
-import {DefaultTheme} from 'styled-components'
+import { DefaultTheme } from "styled-components"
 
-const MyTheme: DefaultTheme = {
+const Theme:DefaultTheme = {
     borderRadius: "15px",
-
+    
     colors: {
-        main: "cyan",
-        secondary: "magenta",
+        almond: "#E3D6C5",
+        paleSilver: "#C5B8AA",
+        lightAlmond: "#EBDFD0",
+        darkBlue: "#031D44",
+        lightBlue: "#04395E"
     },
 }
 
-export {MyTheme}
+export default Theme
