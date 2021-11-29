@@ -8,14 +8,18 @@ type AppProps = {
 const Logo = ({className, logoName}: AppProps): JSX.Element => {
     return (
         <>
-            <h2 className={className}>{logoName}</h2>
+            <a href = "#" className={className}>{logoName}</a>
         </>
     )
 }
 
 const LogoStyled = styled(Logo)`
     color: ${props => props.theme.colors.lightAlmond};
-    font-family: "Annie"
+    font-family: "Annie";
+    margin-left: ${props => props.theme.marginLeft};
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
 `
 
 export default LogoStyled

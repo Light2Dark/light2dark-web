@@ -1,11 +1,12 @@
 import React from 'react';
 import GlobalFonts from './assets/fonts/fonts'
 import GlobalStyles from './GlobalStyles';
-import {ThemeProvider} from 'styled-components';
+import styled, {ThemeProvider} from 'styled-components';
 import theme from "./my-theme"
-import Three from "./components/Header/index"
+import Three from "./components/Main/index"
 
-import Navbar from "./components/Main/Navbar"
+import Navbar from "./components/Header/Navbar"
+import {Link, animateScroll as scroll} from "react-scroll"
 
 function App() {
   return (
@@ -15,11 +16,12 @@ function App() {
 
       <ThemeProvider theme = {theme}>
         <header>
-          <Three />
+          <Navbar logoName = "sham;" />
         </header>
 
         <main>
-          <Navbar logoName = "sham;" />
+          <Three />
+          <section id = "web">Web!!</section>
         </main>
 
         <footer>

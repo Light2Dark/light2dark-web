@@ -17,8 +17,8 @@ const Three = ({className}: Props): JSX.Element => {
 
 const ThreeStyled = styled(Three)<Props>`
     height: 200px;
-    background-color: black;
-    color: ${props => props.theme.colors.almond};
+    background-color: ${props => props.theme.colors.paleSilver};
+    color: ${props => props.theme.colors.darkBlue};
     text-align: center;
 `
 

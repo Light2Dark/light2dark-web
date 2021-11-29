@@ -12,5 +12,8 @@ declare module 'styled-components' {
             darkBlue: string;
             lightBlue: string;
         }
+
+        marginLeft: string;
+        marginRight: string;
     }
 }

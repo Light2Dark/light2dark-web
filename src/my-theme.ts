@@ -10,6 +10,9 @@ const Theme:DefaultTheme = {
         darkBlue: "#031D44",
         lightBlue: "#04395E"
     },
+
+    marginLeft: "20px",
+    marginRight: "20px",
 }
 
 export default Theme

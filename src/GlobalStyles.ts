@@ -11,6 +11,7 @@ export default createGlobalStyle`
 
     body {
         background-color: black;
+        color: white;
     }
 
     #root {
