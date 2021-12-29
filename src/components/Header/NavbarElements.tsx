@@ -1,8 +1,9 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import {Link, animateScroll as scroll} from "react-scroll"
 
 interface Props {
     className?: string;
+    isOpen?: boolean;
 }
 
 type TabProps = {
@@ -10,30 +11,84 @@ type TabProps = {
     tabName: string;
 }
 
-const Bar = styled.div`
+/* Animation Bars */
+const middleBarAnimation = keyframes`
+    from {
+        transform: translateX(0) rotate(0);
+    }
+
+    50% {
+        transform: translateX(-180px) rotate(-180deg);
+    }
+
+    to {
+        transform: translateX(0) rotate(-585deg);
+    }
+`
+
+const topBarAnimation = keyframes`
+    from {
+        transform: translateX(0) rotate(0);
+    }
+
+    50% {
+        transform: translateX(-90px) rotate(90deg);
+    }
+
+    to {
+        transform: translateY(-8px) translateX(-5px) rotate(225deg);
+    }
+`
+
+const lastBarAnimation = keyframes`
+    from {
+        transform: translateX(0) rotate(0);
+    }
+
+    to {
+        transform: translateX(-500px) rotate(-720deg);
+    }
+`
+
+const Bar = styled.div<{isOpen? : boolean}>`
     width: 38px;
     height: 3.5px;
     background-color: ${props => props.theme.colors.lightAlmond};
     margin-bottom: 5px;
-    border-radius: 4px;    
+    border-radius: 4px;
+
+    transform: ${props => (props.isOpen ? "rotate(225deg) translateY(-8px) translateX(-5px)" : "")};
+
+    animation: ${props => (props.isOpen ? css`${topBarAnimation} 0.8s ease 0s` : "")};
 `
 
-const Bar2 = styled(Bar)`
+const MiddleBar = styled(Bar)`
+    animation: ${props => (props.isOpen ? css`${middleBarAnimation} 0.8s ease 0s` : "")};
+
+    transform: ${props => (props.isOpen ? "rotate(-585deg)" : "")};
+`
+
+const LastBar = styled(Bar)`
     width: 28px;
     float: right;
+
+    animation: ${props => (props.isOpen ? css`${lastBarAnimation} 1s ease-out 0s` : "")};
+    transition: all ease 0.8s;
+
+    transform: ${props => (props.isOpen ? "translateX(-400px)" : "")};
 `
 
-const AllBars = ({className}: Props) : JSX.Element => {
+const AllBars = ({className, isOpen}: Props) : JSX.Element => {    
     return (
         <div className={className}>
-            <Bar></Bar>
-            <Bar></Bar>
-            <Bar2></Bar2>
+            <Bar isOpen={isOpen}></Bar>
+            <MiddleBar isOpen = {isOpen}></MiddleBar>
+            <LastBar isOpen={isOpen}></LastBar>
         </div>
     )
 }
 
-export const Bars = styled(AllBars)`
+export const Bars = styled(AllBars)<Props>`
     display: none;
     margin-right: ${props => props.theme.marginRight};
     &:hover {
@@ -43,7 +98,6 @@ export const Bars = styled(AllBars)`
     @media screen and (max-width:768px) {
         display: block;
     }
-
 `
 
 export const Nav = styled.nav`
@@ -62,9 +116,9 @@ export const Nav = styled.nav`
     }
 `
 
-export const TabMenuStyled = styled.ul`
+export const TabMenuStyled = styled.ul<Props>`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     list-style: none;
 
     @media screen and (max-width: 768px) {
@@ -81,28 +135,35 @@ export const LinkScroll = styled(Link)`
     cursor: pointer;
 
     &.active {
-        border-bottom: 2px solid white;
+        /* border-bottom: 2px solid white;
         border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-bottom-right-radius: 10px; */
+
+        background-color: #b40000;
     }
 `
 
 export const LinkScrollContact = styled(LinkScroll)`
-    color: red;
-    transition: all ease 1.5s;
+    /* color: red; */
+    transition: ${props => props.theme.transition2};
+    font-weight: bold;
 
     &:hover {
-        font-weight: bold;
         font-size: 1.2rem;
     }
 `
 
 export const Contact = styled.div`
     display: inline-block;
-    transition: all ease 1.5s;
+
+    div {
+        transition: ${props => props.theme.transition2};
+    }
 
     &:hover {
-        transform: rotate(360deg);
+        div {
+            transform: rotate(-360deg);
+        }
     }
 `
 
@@ -113,4 +174,5 @@ export const Tab = (props: TabProps) => {
         </>
     )
 }
+
 

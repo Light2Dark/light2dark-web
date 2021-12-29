@@ -13,6 +13,8 @@ const Theme:DefaultTheme = {
 
     marginLeft: "20px",
     marginRight: "20px",
+    transition: "all 0.25s cubic-bezier(0.645,0.045,0.355,1)",
+    transition2: "all ease 1.5s",
 }
 
 export default Theme

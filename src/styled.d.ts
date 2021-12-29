@@ -15,5 +15,7 @@ declare module 'styled-components' {
 
         marginLeft: string;
         marginRight: string;
+        transition: string;
+        transition2: string;
     }
 }

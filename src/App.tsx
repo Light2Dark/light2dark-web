@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+
 import GlobalFonts from './assets/fonts/fonts'
 import GlobalStyles from './GlobalStyles';
 import styled, {ThemeProvider} from 'styled-components';
@@ -9,6 +10,7 @@ import Navbar from "./components/Header/Navbar"
 import {Link, animateScroll as scroll} from "react-scroll"
 
 function App() {
+  
   return (
     <div>
       <GlobalFonts />

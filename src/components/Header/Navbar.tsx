@@ -2,6 +2,7 @@ import React from "react"
 import styled from 'styled-components'
 import Logo from "./Logo"
 import {Nav, Bars, TabMenuStyled, Tab, Li, LinkScroll, LinkScrollContact, Contact} from "./NavbarElements"
+import Sidebar from "./Sidebar"
 
 interface Props {
     logoName: string
@@ -10,6 +11,12 @@ interface Props {
 }
 
 const Navbar = ({className, logoName}: Props): JSX.Element => {
+    const [sidebarOpen, setSidebarOpen] = React.useState(false)
+
+    function openSidebar() {
+        setSidebarOpen(!sidebarOpen)
+    }
+
     return (
         <>
             <Nav>
@@ -25,6 +32,8 @@ const Navbar = ({className, logoName}: Props): JSX.Element => {
                             offset={-70}
                             duration={500}
                         >projects.</LinkScroll>
+                    </Li>
+                    <Li>
                         <LinkScroll
                             to="experience"
                             spy={true}
@@ -32,26 +41,29 @@ const Navbar = ({className, logoName}: Props): JSX.Element => {
                             offset={-70}
                             duration={500}
                         >experience.</LinkScroll>
+                    </Li>
+                    <Li>
                         <Contact>
-                            <LinkScrollContact
-                                to="contact"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}
-                            >contact.</LinkScrollContact>
+                            <div>
+                                <LinkScrollContact
+                                    to="contact"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500}
+                                >contact.</LinkScrollContact>
+                            </div>
                         </Contact>
                     </Li>
                 </TabMenuStyled>
-                <Bars />
+                <div onClick = {openSidebar}>
+                    <Bars isOpen = {sidebarOpen} />
+                </div>
             </Nav>
+            <Sidebar isOpen = {sidebarOpen} />
         </>
     )
 }
 
-// const MyComponent = styled(Navbar)`
-//     background-color: black;
-//     height: 200px;
-// `
 
 export default Navbar
