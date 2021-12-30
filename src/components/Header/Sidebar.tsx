@@ -47,6 +47,7 @@ const SidebarContainer = styled.aside<Props>`
     height: 100vh;
     outline: 0px;
     background-color: ${props => props.theme.colors.darkBlue};
+    box-shadow: -10px 0px 30px -15px black;
 
     ${SidebarLink} {
         animation: ${({isOpen}) => (isOpen ? css`${bounce} 0.7s linear 0.2s` : "none")};
@@ -59,12 +60,6 @@ const SidebarContainer = styled.aside<Props>`
         }
     }
 `
-
-// const Contact = styled(Cont)<Props>`
-//     div {
-//         animation: ${({isOpen}) => (isOpen ? css`${bounce} 0.7s linear 0.25s` : "none")};
-//     }
-// `
 
 const SidebarLinkContact = styled(LinkScrollContact)`
     font-size: 1.4rem;

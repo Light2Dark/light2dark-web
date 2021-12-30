@@ -1,6 +1,9 @@
+import styled from "styled-components"
+import { useContext } from "react"
 import Three from "./Three"
+import { SidebarContext } from "../../App"
 
-const Header = (): JSX.Element => {
+const ThreeJS = (): JSX.Element => {
     return (
         <>
             <Three />
@@ -8,4 +11,20 @@ const Header = (): JSX.Element => {
     )
 }
 
-export default Header
+const MainStyled = styled.main<{blur: boolean}>`
+    transition: ${props => props.theme.transition};
+    filter: ${props => (props.blur ? "blur(5px) brightness(0.7)" : "")};
+`
+
+const Main = () => {
+    const blur = useContext(SidebarContext)
+
+    return(
+        <MainStyled blur={blur}>
+            <ThreeJS />
+            <section id = "web">Web!!</section>
+        </MainStyled>
+    )
+}
+
+export default Main

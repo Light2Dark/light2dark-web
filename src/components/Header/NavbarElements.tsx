@@ -28,25 +28,31 @@ const middleBarAnimation = keyframes`
 
 const topBarAnimation = keyframes`
     from {
-        transform: translateX(0) rotate(0);
+        transform: translateX(0) translateY(0) rotate(0);
     }
 
     50% {
-        transform: translateX(-90px) rotate(90deg);
+        transform: translateX(-90px) translateY(4px) rotate(90deg);
     }
 
     to {
-        transform: translateY(-8px) translateX(-5px) rotate(225deg);
+        transform: translateX(0px) translateY(9px) rotate(225deg);
     }
 `
 
 const lastBarAnimation = keyframes`
     from {
         transform: translateX(0) rotate(0);
+        opacity: 100%;
+    }
+
+    80% {
+        opacity: 50%;
     }
 
     to {
         transform: translateX(-500px) rotate(-720deg);
+        opacity: 0;
     }
 `
 
@@ -57,7 +63,8 @@ const Bar = styled.div<{isOpen? : boolean}>`
     margin-bottom: 5px;
     border-radius: 4px;
 
-    transform: ${props => (props.isOpen ? "rotate(225deg) translateY(-8px) translateX(-5px)" : "")};
+    transition: all ease 1s;
+    transform: ${props => (props.isOpen ? "translateX(0px) translateY(9px) rotate(225deg)" : "")};
 
     animation: ${props => (props.isOpen ? css`${topBarAnimation} 0.8s ease 0s` : "")};
 `
@@ -73,9 +80,10 @@ const LastBar = styled(Bar)`
     float: right;
 
     animation: ${props => (props.isOpen ? css`${lastBarAnimation} 1s ease-out 0s` : "")};
-    transition: all ease 0.8s;
 
+    transition: all ease 0.5s;
     transform: ${props => (props.isOpen ? "translateX(-400px)" : "")};
+    opacity: ${props => (props.isOpen ? "0" : "100%")};
 `
 
 const AllBars = ({className, isOpen}: Props) : JSX.Element => {    

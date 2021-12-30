@@ -1,4 +1,6 @@
-import React from "react"
+import React, {useContext} from "react"
+import { SidebarContext } from "../../App"
+
 import styled from 'styled-components'
 import Logo from "./Logo"
 import {Nav, Bars, TabMenuStyled, Tab, Li, LinkScroll, LinkScrollContact, Contact} from "./NavbarElements"
@@ -6,16 +8,13 @@ import Sidebar from "./Sidebar"
 
 interface Props {
     logoName: string
-
+    openSidebar: () => void;
     className?: string
 }
 
-const Navbar = ({className, logoName}: Props): JSX.Element => {
-    const [sidebarOpen, setSidebarOpen] = React.useState(false)
-
-    function openSidebar() {
-        setSidebarOpen(!sidebarOpen)
-    }
+const Navbar = ({className, logoName, openSidebar}: Props): JSX.Element => {
+    // const [sidebarOpen, setSidebarOpen] = React.useState(false)
+    const sidebarOpen = useContext(SidebarContext)
 
     return (
         <>
