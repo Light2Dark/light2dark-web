@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 import * as THREE from 'three'
 import ReactDOM from 'react-dom'
-import React, {useRef, useState} from 'react'
-import {Canvas, useFrame} from '@react-three/fiber'
+import React, {useRef, useState, Suspense} from 'react'
+import {Canvas, useFrame, useThree} from '@react-three/fiber'
 
-import {useGLTF, useTexture} from "@react-three/drei"
+import {useGLTF, useTexture, Cloud, Sky, OrbitControls} from "@react-three/drei"
+import smokeMap from "../../assets/models/smoke-1.png"
 
 interface Props {
     className?: string
@@ -43,44 +44,90 @@ function Rose(props: JSX.IntrinsicElements["mesh"]) {
 const smokeImg = "../../assets/models/smoke-1.png"
 
 function Rain(props: JSX.IntrinsicElements["mesh"]) {
-    // const smokeMap = useTexture("../../assets/models/smoke-1.png");
-    // const textureProps = useTexture({
-    //     smoke: "smoke-1.png",
-    // });
+    const texture = useTexture(smokeMap)
     
-
     return(
-        <mesh>
-            <sphereGeometry args={[1,32,32]} />
-            <meshStandardMaterial color={"blue"} />
-            {/* <meshLambertMaterial map={textureProps.smoke} transparent={true} /> */}
-        </mesh>
+        <>
+            <ambientLight intensity={0.8} />
+            <mesh>
+                <Suspense fallback = {null}>
+                    <sphereGeometry args={[2,32,32]} />
+                    <meshStandardMaterial color={"blue"} />
+                    {/* <meshLambertMaterial map={textureProps.smoke} transparent={true} /> */}
+                </Suspense>
+            </mesh>
+        </>
     )
 }
 
-const Three = (): JSX.Element => {
+function Rig() {
+    const camera = useThree((state) => state.camera)
+    return useFrame((state) => {
+        camera.position.z = Math.sin(state.clock.elapsedTime) * 10
+    })
+}
+
+const CanvasStyled = styled(Canvas)`
+    background-color: white;
+`
+
+function Clouds_Sky(): JSX.Element {
+    return(
+        <>
+            <ambientLight intensity={0.8} />
+            <pointLight intensity={2} position={[0,0,-1000]} />
+            <Suspense fallback = {null}>
+                <Cloud position={[-4, -2, -25]} speed={0.2} opacity={1} />
+                <Cloud position={[4, 2, -15]} speed={0.2} opacity={0.5} />
+                <Cloud position={[-4, 2, -10]} speed={0.2} opacity={1} />
+                <Cloud position={[4, -2, -5]} speed={0.2} opacity={0.5} />
+                <Cloud position={[4, 2, 0]} speed={0.2} opacity={0.75} />
+            </Suspense>
+
+            <Sky azimuth={180} turbidity={7.4} rayleigh={3.007} inclination={0} mieCoefficient={0.008} mieDirectionalG={0.764} distance={1000} />
+            <OrbitControls />
+        </>
+    )
+}
+
+const Three = () : JSX.Element => {
     return (
         <>
             {/* <h2 className = {className}>Three.js video here, rain falling on white roses?</h2> */}
 
-            <CanvasStyled>
+            {/* <CanvasStyled>
                 <ambientLight intensity={1} color={0x55555} />
                 <directionalLight color="0xffeedd" position={[0,0,1]} />
+                <Rain />
+            </CanvasStyled> */}
+
+            <CanvasStyled style={{height: "400px"}} camera={{position: [0,0,16], fov: 75}}>
+                {/* <Clouds_Sky /> */}
                 <Rain />
             </CanvasStyled>
         </>
     )
 }
 
-const CanvasStyled = styled(Canvas)`
-    height: 200px;
-    color: ${props => props.theme.colors.darkBlue};
-    background-color: 0xffeedd;
-    background-color: white;
-    text-align: center;
-`
-
-
-
-
 export default Three
+
+
+
+//  const RefExample = (): JSX.Element => {
+    //     const count = useRef(0) // the reference count is initialized to 0
+    //     // value of reference is persisted accross re-renderings
+    //     // change in reference values does not trigger re-rendering
+        
+    //     const click = () => {
+    //         count.current++
+    //         console.log(`Clicked ${count.current} times`)
+    //     }
+    
+    //     console.log("I rendered")
+    
+    //     return(
+    //         <>
+    //             <button style={{color: "blue"}} onClick={click}>Click</button>
+    //         </>
+    //     )
+    // }
