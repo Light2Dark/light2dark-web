@@ -4,8 +4,7 @@ import ReactDOM from 'react-dom'
 import React, {useRef, useState, Suspense} from 'react'
 import {Canvas, useFrame, useThree} from '@react-three/fiber'
 
-import {useGLTF, useTexture, Cloud, Sky, OrbitControls} from "@react-three/drei"
-import smokeMap from "../../assets/models/smoke-1.png"
+import {useGLTF, Cloud, Sky, OrbitControls} from "@react-three/drei"
 
 interface Props {
     className?: string
@@ -41,19 +40,15 @@ function Rose(props: JSX.IntrinsicElements["mesh"]) {
     )
 }
 
-const smokeImg = "../../assets/models/smoke-1.png"
-
 function Rain(props: JSX.IntrinsicElements["mesh"]) {
-    const texture = useTexture(smokeMap)
-    
+
     return(
         <>
             <ambientLight intensity={0.8} />
             <mesh>
                 <Suspense fallback = {null}>
-                    <sphereGeometry args={[2,32,32]} />
-                    <meshStandardMaterial color={"blue"} />
-                    {/* <meshLambertMaterial map={textureProps.smoke} transparent={true} /> */}
+                    
+
                 </Suspense>
             </mesh>
         </>
@@ -85,7 +80,7 @@ function Clouds_Sky(): JSX.Element {
             </Suspense>
 
             <Sky azimuth={180} turbidity={7.4} rayleigh={3.007} inclination={0} mieCoefficient={0.008} mieDirectionalG={0.764} distance={1000} />
-            <OrbitControls />
+            <OrbitControls autoRotate />
         </>
     )
 }
@@ -93,7 +88,7 @@ function Clouds_Sky(): JSX.Element {
 const Three = () : JSX.Element => {
     return (
         <>
-            {/* <h2 className = {className}>Three.js video here, rain falling on white roses?</h2> */}
+            {/* Rain falling on roses */}
 
             {/* <CanvasStyled>
                 <ambientLight intensity={1} color={0x55555} />
@@ -103,7 +98,7 @@ const Three = () : JSX.Element => {
 
             <CanvasStyled style={{height: "400px"}} camera={{position: [0,0,16], fov: 75}}>
                 {/* <Clouds_Sky /> */}
-                <Rain />
+                
             </CanvasStyled>
         </>
     )
