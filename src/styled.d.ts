@@ -17,5 +17,7 @@ declare module 'styled-components' {
         marginRight: string;
         transition: string;
         transition2: string;
+        navHeight: string;
+        navMobileHeight: string;
     }
 }

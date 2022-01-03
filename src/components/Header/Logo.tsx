@@ -15,11 +15,11 @@ const Logo = ({className, logoName}: AppProps): JSX.Element => {
 
 const LogoStyled = styled(Logo)`
     color: ${props => props.theme.colors.lightAlmond};
-    font-family: "Annie";
+    font-family: "Fredericka";
     margin-left: ${props => props.theme.marginLeft};
     text-decoration: none;
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 500;
 `
 
 export default LogoStyled

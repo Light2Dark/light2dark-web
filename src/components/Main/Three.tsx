@@ -97,8 +97,7 @@ const Three = () : JSX.Element => {
             </CanvasStyled> */}
 
             <CanvasStyled style={{height: "400px"}} camera={{position: [0,0,16], fov: 75}}>
-                {/* <Clouds_Sky /> */}
-                
+                <Clouds_Sky />    
             </CanvasStyled>
         </>
     )

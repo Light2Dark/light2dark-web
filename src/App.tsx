@@ -1,21 +1,28 @@
 import React, {useState} from 'react';
-
 import GlobalFonts from './assets/fonts/fonts'
 import GlobalStyles from './GlobalStyles';
 import styled, {ThemeProvider} from 'styled-components';
 import theme from "./my-theme"
-import Main from "./components/Main/index"
 
-import Navbar from "./components/Header/Navbar"
-import {Link, animateScroll as scroll} from "react-scroll"
-
+import {Three, Project, Contact} from "./components/Main/index"
+import Navbar, {Sidebar} from "./components/Header/Navbar"
 export const SidebarContext = React.createContext(false)
 
+
+const MainStyled = styled.main<{blur: boolean}>`
+  transition: ${props => props.theme.transition};
+  filter: ${props => (props.blur ? "blur(5px) brightness(0.7)" : "")};
+`
+
+const HeaderStyled = styled.header`
+
+`
+
 function App() {
-  const [sidebarOpen, setSidebarOpen] = React.useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   function openSidebar() {
-      setSidebarOpen(!sidebarOpen)
+    setSidebarOpen(!sidebarOpen)
   }
   
   return (
@@ -25,11 +32,16 @@ function App() {
 
       <ThemeProvider theme = {theme}>
         <SidebarContext.Provider value = {sidebarOpen}>
-          <header>
+          <HeaderStyled>
             <Navbar logoName = "sham;" openSidebar = {openSidebar} />
-          </header>
+            <Sidebar isOpen = {sidebarOpen} />
+          </HeaderStyled>
 
-          <Main />
+          <MainStyled blur={sidebarOpen}>
+            {/* <Three /> */}
+            <Project />
+            <Contact />
+          </MainStyled>
 
           <footer>
 

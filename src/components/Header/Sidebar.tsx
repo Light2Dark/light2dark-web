@@ -41,7 +41,9 @@ const SidebarContainer = styled.aside<Props>`
     align-items: center;
     transition: ${props => props.theme.transition};
     top: 0;
-    right: ${({isOpen}) => (isOpen ? "0px" : "-400px")};
+    /* right: ${({isOpen}) => (isOpen ? "0px" : "-400px")}; */
+    transform: ${({isOpen}) => (isOpen ? "translateX(0vw)" : "translateX(100vw)")};
+    right: 0;
     z-index: 9;
     width: min(65vw, 400px);
     height: 100vh;
