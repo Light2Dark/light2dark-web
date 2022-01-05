@@ -141,6 +141,7 @@ export const Li = styled.li`
 export const LinkScroll = styled(Link)`
     color: white;
     cursor: pointer;
+    transition: background-color 0.2s ease !important;
 
     &.active {
         /* border-bottom: 2px solid white;

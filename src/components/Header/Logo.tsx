@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import {animateScroll as scroll} from "react-scroll"
 
 type AppProps = {
     logoName: string,
@@ -8,7 +9,7 @@ type AppProps = {
 const Logo = ({className, logoName}: AppProps): JSX.Element => {
     return (
         <>
-            <a href = "#" className={className}>{logoName}</a>
+            <a href = "#" className={className} onClick={() => {scroll.scrollToTop()}}>{logoName}</a>
         </>
     )
 }

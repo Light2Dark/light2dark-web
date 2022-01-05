@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+interface Props {
+    id: string;
+}
+
 const DivStyled = styled.div`
     height: 400px;
     background-color: ${props => props.theme.colors.lightBlue};
@@ -19,10 +23,10 @@ const DivItem = styled.div`
     background-color: pink;
 `
 
-const Project = () => {
+const Project = (props: Props) => {
     return (
         <>
-            <DivStyled>
+            <DivStyled id={props.id}>
                 <ul>
                     <li>web.</li>
                     <li>games.</li>
