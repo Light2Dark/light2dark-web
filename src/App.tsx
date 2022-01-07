@@ -4,11 +4,12 @@ import GlobalStyles from './GlobalStyles';
 import styled, {ThemeProvider} from 'styled-components';
 import theme from "./my-theme"
 
-import {Three, Project, Contact} from "./components/Main/index"
+import {Three, Project, Contact, Stories} from "./components/Main/index"
 import Navbar, {Sidebar} from "./components/Header/Navbar"
 import debounce from './utilities/helpers';
-export const SidebarContext = React.createContext(false)
+import projects from "./projects.json"
 
+export const SidebarContext = React.createContext(false)
 
 const MainStyled = styled.main<{blur: boolean}>`
   transition: ${props => props.theme.transition};
@@ -22,7 +23,6 @@ const HeaderStyled = styled.header<{visible: boolean, sidebarOpen?: boolean}>`
   top: ${props => props.visible ? "0px": "-80px"};
   width: 100%;
 `
-
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -59,13 +59,14 @@ function App() {
       <ThemeProvider theme = {theme}>
         <SidebarContext.Provider value = {sidebarOpen}>
           <HeaderStyled visible={visible} sidebarOpen={sidebarOpen}>
-            <Navbar logoName = "sham;" openSidebar = {openSidebar} />
+            <Navbar logoName = "sham;" openSidebar = {openSidebar}/>
             <Sidebar isOpen = {sidebarOpen} />
           </HeaderStyled>
 
           <MainStyled blur={sidebarOpen}>
-            {/* <Three /> */}
-            <Project id='projects' />
+            <Three />
+            <Project id= "projects" projects={projects}/>
+            <Stories id="stories"/>
             <Contact id = "contact" />
           </MainStyled>
 

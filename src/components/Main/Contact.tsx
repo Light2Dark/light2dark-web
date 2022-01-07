@@ -6,7 +6,7 @@ const Contact = (props: Props) => {
     return(
         <div id={props.id}>
             <h2>Get In Touch</h2>
-            <div style={{height: "1000px", backgroundColor: "lightcoral"}}>
+            <div style={{height: "400px", backgroundColor: "lightcoral"}}>
 
             </div>
         </div>

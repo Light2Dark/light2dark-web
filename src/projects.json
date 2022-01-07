@@ -1,8 +1,28 @@
 [
     {
         "name": "Tumpang: Carpooling for Businesses",
+        "description": "Startup model designed from idea to prototype design",
         "technologies": "Figma, UI/UX",
         "picture": "/projectPics/tumpang.jpg",
-        "buttonText": "View on Figma"
+        "buttonText": "View on Figma",
+        "link": ""
+    },
+
+    {
+        "name": "Signify MSL",
+        "description": "Platform to learn Malaysian Sign Language (MSL)",
+        "technologies": "HTML, CSS, JS",
+        "picture": "",
+        "buttonText":"Visit Website",
+        "link":"https://signifymsl.github.io/signify/"
+    },
+
+    {
+        "name": "Git and Github Tutorial",
+        "description": "Materials to teach beginners about VCS and Git",
+        "technologies": "Git, GitHub, VSCode, PPT",
+        "picture": "",
+        "buttonText":"Visit Repository",
+        "link":"https://github.com/Light2Dark/git_tutorial"
     }
 ]

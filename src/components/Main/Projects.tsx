@@ -2,6 +2,11 @@ import styled from "styled-components"
 
 interface Props {
     id: string;
+    projects: object;
+}
+
+type ProjectItemProps = {
+    projects: object;
 }
 
 const DivStyled = styled.div`
@@ -23,7 +28,21 @@ const DivItem = styled.div`
     background-color: pink;
 `
 
+const ProjectItem = (projects: ProjectItemProps) => {
+    
+    // Object.entries(projects).map(project => {
+    //     console.log(project);
+    // })
+
+    return(
+        <DivItem>
+
+        </DivItem>
+    )
+}
+
 const Project = (props: Props) => {
+
     return (
         <>
             <DivStyled id={props.id}>
@@ -35,7 +54,7 @@ const Project = (props: Props) => {
                 </ul>
 
                 <FlexDiv>
-                    <DivItem />
+                    <ProjectItem projects={props.projects} />
                     <DivItem style={{backgroundColor: "red"}} />
                     <DivItem style={{backgroundColor: "grey"}} />
                     <DivItem style={{backgroundColor: "blue"}} />

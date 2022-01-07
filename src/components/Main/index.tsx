@@ -1,9 +1,6 @@
-import styled from "styled-components"
-import { useContext } from "react"
 import Three from "./Three"
-import { SidebarContext } from "../../App"
 import Project from "./Projects"
 import Contact from "./Contact"
-import projectsData from "../../projects.json"
+import Stories from "./Stories"
 
-export {Three, Project, Contact}
+export {Three, Project, Contact, Stories}
