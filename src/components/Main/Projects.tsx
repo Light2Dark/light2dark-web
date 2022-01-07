@@ -1,19 +1,27 @@
+import React, {useState} from "react"
 import styled from "styled-components"
+import {LinksDiv, Link, AllLink} from "./Project/ProjectFilter"
 
 interface Props {
     id: string;
-    projects: object;
+    projects: ProjectItem[];
 }
 
-type ProjectItemProps = {
-    projects: object;
+interface ProjectItem {
+    name: string;
+    description: string;
+    technologies: string;
+    picture: string;
+    buttonText: string;
+    link: string;
+    tag: string;
 }
 
 const DivStyled = styled.div`
     height: 400px;
     background-color: ${props => props.theme.colors.lightBlue};
-    margin: 0 2em 0 2em;
-    padding: 20px;
+    margin: ${props => props.theme.margin};
+    padding: 40px;
 `
 
 const FlexDiv = styled.div`
@@ -22,42 +30,49 @@ const FlexDiv = styled.div`
     flex-wrap: wrap;
 `
 
-const DivItem = styled.div`
+const DivItem = styled.div<ProjectItem>`
     height: 100px;
     width: 50%;
     background-color: pink;
+    background-image: url(${props => props.picture});
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 `
 
-const ProjectItem = (projects: ProjectItemProps) => {
+const Project = ({id, projects}: Props) => {
     
-    // Object.entries(projects).map(project => {
-    //     console.log(project);
-    // })
+    const [displayedProjects, setDisplayedProjects] = useState<ProjectItem[]>(projects)
 
-    return(
-        <DivItem>
-
-        </DivItem>
-    )
-}
-
-const Project = (props: Props) => {
+    const handleDisplayedProjects = (tag: string) => {
+        if (tag === "all") {
+            setDisplayedProjects(projects)
+        } else {
+            const selectedProjects = projects.filter(projects => projects.tag === tag)
+            setDisplayedProjects(selectedProjects)
+        }
+    }
 
     return (
         <>
-            <DivStyled id={props.id}>
-                <ul>
-                    <li>web.</li>
-                    <li>games.</li>
-                    <li>writing.</li>
-                    <li>science.</li>
-                </ul>
+            <DivStyled id={id}>
+                <LinksDiv>
+                    <AllLink onClick={() => handleDisplayedProjects("all")}>All.</AllLink>
+                    <Link onClick={() => handleDisplayedProjects("web")}>web.</Link>
+                    <Link onClick={() => handleDisplayedProjects("games")}>games.</Link>
+                    <Link onClick={() => handleDisplayedProjects("writing")}>writing.</Link>
+                    <Link onClick={() => handleDisplayedProjects("other")}>other.</Link>
+                </LinksDiv>
 
                 <FlexDiv>
-                    <ProjectItem projects={props.projects} />
-                    <DivItem style={{backgroundColor: "red"}} />
-                    <DivItem style={{backgroundColor: "grey"}} />
-                    <DivItem style={{backgroundColor: "blue"}} />
+                    {displayedProjects.map(({buttonText, name, link, description, technologies, picture, tag}) => {
+                        return(
+                            <DivItem key={name} buttonText={buttonText} description={description} link={link} technologies={technologies} picture={picture} name={name} tag={tag}>
+                                {name}
+                            </DivItem>
+                        )
+                    })}
+                    
                 </FlexDiv>
             </DivStyled>
         </>

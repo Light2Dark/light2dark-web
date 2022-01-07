@@ -17,6 +17,7 @@ const Theme:DefaultTheme = {
     transition2: "all ease 1.5s",
     navHeight: "100px",
     navMobileHeight: "70px",
+    margin: "5% 8%",
 }
 
 export default Theme

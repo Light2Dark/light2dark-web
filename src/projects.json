@@ -5,7 +5,8 @@
         "technologies": "Figma, UI/UX",
         "picture": "/projectPics/tumpang.jpg",
         "buttonText": "View on Figma",
-        "link": ""
+        "link": "",
+        "tag": "web"
     },
 
     {
@@ -14,7 +15,8 @@
         "technologies": "HTML, CSS, JS",
         "picture": "",
         "buttonText":"Visit Website",
-        "link":"https://signifymsl.github.io/signify/"
+        "link":"https://signifymsl.github.io/signify/",
+        "tag": "web"
     },
 
     {
@@ -23,6 +25,7 @@
         "technologies": "Git, GitHub, VSCode, PPT",
         "picture": "",
         "buttonText":"Visit Repository",
-        "link":"https://github.com/Light2Dark/git_tutorial"
+        "link":"https://github.com/Light2Dark/git_tutorial",
+        "tag": "other"
     }
 ]
