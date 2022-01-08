@@ -5,18 +5,21 @@ export const LinksDiv = styled.div`
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 0 0 10px 0;
 `
 
 export const Link = styled.a`
     cursor: pointer;
-    margin: 0 45px;
+    margin: 0 40px;
+    font-size: 1.2em;
 
     &:hover {
         text-decoration: underline;
+        text-decoration-color: #ff0000a7;
     }
 
     &:active {
-        background-color: white;
+        background-color: black;
     }
 
     @media screen and (max-width: 768px) {

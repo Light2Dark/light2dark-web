@@ -30,7 +30,7 @@ const bounce = keyframes`
 
 const SidebarLink = styled(LinkScroll)`
     margin-bottom: 50px;
-    font-size: 1.4rem;
+    font-size: 1.2em;
     transform-origin: bottom left;
 `
 

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { SidebarContext } from "../../App"
 
 import Logo from "./Logo"
-import {Nav, Bars, TabMenuStyled, Tab, Li, LinkScroll, LinkScrollContact, Contact} from "./NavbarElements"
+import {Nav, Bars, TabMenuStyled, Tab, LiMargin, Li, LinkScroll, LinkScrollContact, Contact, BarsDiv} from "./NavbarElements"
 import Sidebar from "./Sidebar"
 import debounce from "../../utilities/helpers"
 
@@ -26,7 +26,7 @@ const Navbar = ({className, logoName, openSidebar}: Props): JSX.Element => {
             <NavStyled sidebarOpen={sidebarOpen}>
                 <Logo logoName = {logoName} />
                 <TabMenuStyled>
-                    <Li>
+                    <LiMargin>
                         <LinkScroll
                             activeClass=""
                             to="projects"
@@ -35,8 +35,8 @@ const Navbar = ({className, logoName, openSidebar}: Props): JSX.Element => {
                             offset={-70}
                             duration={500}
                         >projects.</LinkScroll>
-                    </Li>
-                    <Li>
+                    </LiMargin>
+                    <LiMargin>
                         <LinkScroll
                             activeClass=""
                             to="stories"
@@ -45,7 +45,7 @@ const Navbar = ({className, logoName, openSidebar}: Props): JSX.Element => {
                             offset={-70}
                             duration={500}
                         >stories.</LinkScroll>
-                    </Li>
+                    </LiMargin>
                     <Li>
                         <Contact>
                             <div>
@@ -61,9 +61,9 @@ const Navbar = ({className, logoName, openSidebar}: Props): JSX.Element => {
                         </Contact>
                     </Li>
                 </TabMenuStyled>
-                <div onClick = {openSidebar}>
+                <BarsDiv onClick = {openSidebar}>
                     <Bars isOpen = {sidebarOpen} />
-                </div>
+                </BarsDiv>
             </NavStyled>
         </>
     )

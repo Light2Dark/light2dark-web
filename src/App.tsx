@@ -14,6 +14,7 @@ export const SidebarContext = React.createContext(false)
 const MainStyled = styled.main<{blur: boolean}>`
   transition: ${props => props.theme.transition};
   filter: ${props => (props.blur ? "blur(5px) brightness(0.7)" : "")};
+  background-color: ${props => props.theme.colors.darkBlue};
 `
 
 const HeaderStyled = styled.header<{visible: boolean, sidebarOpen?: boolean}>`

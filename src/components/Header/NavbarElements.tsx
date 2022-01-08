@@ -98,7 +98,6 @@ const AllBars = ({className, isOpen}: Props) : JSX.Element => {
 
 export const Bars = styled(AllBars)<Props>`
     display: none;
-    margin-right: ${props => props.theme.marginRight};
     &:hover {
         cursor: pointer;
     }
@@ -108,10 +107,14 @@ export const Bars = styled(AllBars)<Props>`
     }
 `
 
+export const BarsDiv = styled.div`
+    margin-right: ${props => props.theme.marginRight};
+`
+
 export const Nav = styled.nav`
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
 
     background: ${props => props.theme.colors.darkBlue};
     height: 80px;
@@ -121,6 +124,7 @@ export const Nav = styled.nav`
 
     @media screen and (max-width: 960px) {
         transition: 0.8s all ease;
+        justify-content: space-between
     }
 `
 
@@ -128,6 +132,7 @@ export const TabMenuStyled = styled.ul<Props>`
     display: flex;
     flex-direction: row;
     list-style: none;
+    margin-left: auto;
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -135,7 +140,11 @@ export const TabMenuStyled = styled.ul<Props>`
 `
 
 export const Li = styled.li`
-    
+    font-size: 1.2em;
+`
+
+export const LiMargin = styled(Li)`
+    margin-right: 20%;
 `
 
 export const LinkScroll = styled(Link)`
@@ -148,7 +157,11 @@ export const LinkScroll = styled(Link)`
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px; */
 
-        background-color: #b40000;
+        background-color: ${props => props.theme.colors.darkRed};
+    }
+
+    &:hover {
+        background-color: ${props => props.theme.colors.darkRed};
     }
 `
 
@@ -156,10 +169,6 @@ export const LinkScrollContact = styled(LinkScroll)`
     /* color: red; */
     transition: ${props => props.theme.transition2};
     font-weight: bold;
-
-    &:hover {
-        font-size: 1.2rem;
-    }
 `
 
 export const Contact = styled.div`

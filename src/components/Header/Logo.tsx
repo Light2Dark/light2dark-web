@@ -16,11 +16,18 @@ const Logo = ({className, logoName}: AppProps): JSX.Element => {
 
 const LogoStyled = styled(Logo)`
     color: ${props => props.theme.colors.lightAlmond};
-    font-family: "Fredericka";
-    margin-left: ${props => props.theme.marginLeft};
+    font-family: "Brush";
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 2.7rem;
     font-weight: 500;
+
+    &:hover {
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 968px) {
+        margin-left: ${props => props.theme.marginLeft};
+    }
 `
 
 export default LogoStyled
