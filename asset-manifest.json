@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.b708a6fd.chunk.css",
-    "main.js": "/static/js/main.7aa5eeb2.chunk.js",
-    "main.js.map": "/static/js/main.7aa5eeb2.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f77b5d0d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f77b5d0d.js.map",
-    "static/js/2.c563f8b5.chunk.js": "/static/js/2.c563f8b5.chunk.js",
-    "static/js/2.c563f8b5.chunk.js.map": "/static/js/2.c563f8b5.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.b708a6fd.chunk.css.map": "/static/css/main.b708a6fd.chunk.css.map",
-    "static/js/2.c563f8b5.chunk.js.LICENSE.txt": "/static/js/2.c563f8b5.chunk.js.LICENSE.txt",
-    "static/media/AnnieUseYourTelescope.57656c27.ttf": "/static/media/AnnieUseYourTelescope.57656c27.ttf",
-    "static/media/ComforterBrush-Regular.68c1f132.ttf": "/static/media/ComforterBrush-Regular.68c1f132.ttf",
-    "static/media/FrederickatheGreat-Regular.aa6c877c.ttf": "/static/media/FrederickatheGreat-Regular.aa6c877c.ttf"
+    "main.css": "/light2dark-web/static/css/main.b708a6fd.chunk.css",
+    "main.js": "/light2dark-web/static/js/main.7aa5eeb2.chunk.js",
+    "main.js.map": "/light2dark-web/static/js/main.7aa5eeb2.chunk.js.map",
+    "runtime-main.js": "/light2dark-web/static/js/runtime-main.e2bb531f.js",
+    "runtime-main.js.map": "/light2dark-web/static/js/runtime-main.e2bb531f.js.map",
+    "static/js/2.dabd3081.chunk.js": "/light2dark-web/static/js/2.dabd3081.chunk.js",
+    "static/js/2.dabd3081.chunk.js.map": "/light2dark-web/static/js/2.dabd3081.chunk.js.map",
+    "index.html": "/light2dark-web/index.html",
+    "static/css/main.b708a6fd.chunk.css.map": "/light2dark-web/static/css/main.b708a6fd.chunk.css.map",
+    "static/js/2.dabd3081.chunk.js.LICENSE.txt": "/light2dark-web/static/js/2.dabd3081.chunk.js.LICENSE.txt",
+    "static/media/AnnieUseYourTelescope.57656c27.ttf": "/light2dark-web/static/media/AnnieUseYourTelescope.57656c27.ttf",
+    "static/media/ComforterBrush-Regular.68c1f132.ttf": "/light2dark-web/static/media/ComforterBrush-Regular.68c1f132.ttf",
+    "static/media/FrederickatheGreat-Regular.aa6c877c.ttf": "/light2dark-web/static/media/FrederickatheGreat-Regular.aa6c877c.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.f77b5d0d.js",
-    "static/js/2.c563f8b5.chunk.js",
+    "static/js/runtime-main.e2bb531f.js",
+    "static/js/2.dabd3081.chunk.js",
     "static/css/main.b708a6fd.chunk.css",
     "static/js/main.7aa5eeb2.chunk.js"
   ]
