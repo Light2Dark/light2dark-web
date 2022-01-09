@@ -1,6 +1,6 @@
 {
   "name": "light2dark",
-  "homepage": "https://Light2Dark.github.io/light2dark-web",
+  "homepage": "https://light2dark.github.io/light2dark-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
