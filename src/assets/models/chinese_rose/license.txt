@@ -1,0 +1,11 @@
+Model Information:
+* title:	Chinese Rose
+* source:	https://sketchfab.com/3d-models/chinese-rose-eaee5c918ab74563867f445569eb65bc
+* author:	sujirour (https://sketchfab.com/sujirour)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Chinese Rose" (https://sketchfab.com/3d-models/chinese-rose-eaee5c918ab74563867f445569eb65bc) by sujirour (https://sketchfab.com/sujirour) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
