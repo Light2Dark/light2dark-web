@@ -1,5 +1,6 @@
 {
   "name": "light2dark",
+  "homepage": "https://Light2Dark.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -60,6 +61,7 @@
     "@types/react-scroll": "^1.8.3",
     "babel-plugin-styled-components": "^1.13.3",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "typescript-plugin-styled-components": "^2.0.0"
   }
 }
