@@ -5,7 +5,7 @@ export const LinksDiv = styled.div`
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
 `
 
 export const Link = styled.a`

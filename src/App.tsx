@@ -8,6 +8,7 @@ import {Three, Project, Contact, Stories} from "./components/Main/index"
 import Navbar, {Sidebar} from "./components/Header/Navbar"
 import debounce from './utilities/helpers';
 import projects from "./projects.json"
+import Footer from './components/Footer/footer';
 
 export const SidebarContext = React.createContext(false)
 
@@ -72,7 +73,7 @@ function App() {
           </MainStyled>
 
           <footer>
-
+            <Footer />
           </footer>
         </SidebarContext.Provider>
       </ThemeProvider>
