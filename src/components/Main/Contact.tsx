@@ -10,9 +10,13 @@ interface Props {
 const DivStyled = styled.div`
     margin: ${props => props.theme.margin};
     margin-bottom: 0;
-    background-color: lightcoral;
+    background-color: #cc3939;
     padding: 15px;
     border-radius: ${props => props.theme.borderRadius};
+
+    * {
+        color: black;
+    }
 `
 
 const Form = styled.form`
