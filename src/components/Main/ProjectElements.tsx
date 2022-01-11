@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+
 export interface ProjectItem {
     name: string;
     description: string;
@@ -25,7 +26,6 @@ export const DivItem = styled.div<ProjectItem>`
     height: 200px;
     width: 50%;
     cursor: pointer;
-    background-color: pink;
     background-image: url(${props => props.picture});
     background-repeat: no-repeat;
     background-size: contain;

@@ -9,10 +9,17 @@ type AppProps = {
 const Logo = ({className, logoName}: AppProps): JSX.Element => {
     return (
         <>
-            <a href = "#" className={className} onClick={() => {scroll.scrollToTop()}}>{logoName}</a>
+            <Button className={className} onClick={() => {scroll.scrollToTop()}}>{logoName}</Button>
         </>
     )
 }
+
+const Button = styled.button`
+    background-color: ${props => props.theme.colors.darkBlue};
+    color: white;
+    cursor: pointer;
+    border: none;
+`
 
 const LogoStyled = styled(Logo)`
     color: ${props => props.theme.colors.lightAlmond};

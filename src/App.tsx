@@ -44,7 +44,7 @@ function App() {
       setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10)
 
       setPrevScrollPos(currentScrollPos)
-  }, 100)
+  }, 300) // 300 is the pause btwn triggering rerender
 
   useEffect(() => {
       window.addEventListener("scroll", handleScroll)
@@ -52,7 +52,7 @@ function App() {
           window.removeEventListener("scroll", handleScroll)
       }
   }, [prevScrollPos, visible, handleScroll])
-  
+
   return (
     <div>
       <GlobalFonts />

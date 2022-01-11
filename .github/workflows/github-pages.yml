@@ -18,6 +18,9 @@ jobs:
     # - name: Test
     #   run: npm run test
 
+    - name: Audit Fix
+      run: npm audit fix
+
     - name: Deploy
       run: |
         git config --global user.name 'Anton Putra'
