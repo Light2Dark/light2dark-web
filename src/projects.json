@@ -1,31 +1,103 @@
 [
     {
+        "name": "Ego",
+        "description": "Experimental audio dialogue game in Unity",
+        "technologies": "Unity, Figma",
+        "picture": "/projectPics/ego.png",
+        "buttonText":"Visit Repository",
+        "link":"https://github.com/Light2Dark/Ego",
+        "tag": "games"
+    },
+
+    {
         "name": "Tumpang: Carpooling for Businesses",
         "description": "Startup model designed from idea to prototype design",
         "technologies": "Figma, UI/UX",
-        "picture": "projectPics/tumpang.jpg",
+        "picture": "/projectPics/tumpang.jpg",
         "buttonText": "View on Figma",
         "link": "",
-        "tag": "web"
+        "tag": "other"
     },
 
     {
         "name": "Signify MSL",
         "description": "Platform to learn Malaysian Sign Language (MSL)",
         "technologies": "HTML, CSS, JS",
-        "picture": "",
+        "picture": "/projectPics/signify-msl.png",
         "buttonText":"Visit Website",
         "link":"https://signifymsl.github.io/signify/",
         "tag": "web"
     },
 
     {
-        "name": "Git and Github Tutorial",
-        "description": "Materials to teach beginners about VCS and Git",
-        "technologies": "Git, GitHub, VSCode, PPT",
-        "picture": "",
+        "name": "Yumcha",
+        "description": "App to meet new people over food",
+        "technologies": "JS, UI",
+        "picture": "/projectPics/yumcha.png",
+        "buttonText":"Visit Website",
+        "link":"",
+        "tag": "web"
+    },
+
+    {
+        "name": "Io",
+        "description": "Play a keyboard over a song and try not to miss notes",
+        "technologies": "Unity",
+        "picture": "/projectPics/io.jpg",
         "buttonText":"Visit Repository",
-        "link":"https://github.com/Light2Dark/git_tutorial",
-        "tag": "other"
+        "link":"https://github.com/Light2Dark/Io",
+        "tag": "web"
+    },
+
+    {
+        "name": "Etch-a-Sketch",
+        "description": "Draw and have fun in a digital Etch-a-Sketch",
+        "technologies": "HTML, CSS, JS",
+        "picture": "/projectPics/etch.png",
+        "buttonText":"Visit Website",
+        "link":"https://light2dark.github.io/Etch-A-Sketch/",
+        "tag": "web"
+    },
+
+    {
+        "name": "Falling Blocks",
+        "description": "Avoid the blocks in my first Unity game",
+        "technologies": "Unity",
+        "picture": "/projectPics/falling.png",
+        "buttonText":"Visit Repository",
+        "link":"https://github.com/Light2Dark/Falling-Blocks",
+        "tag": "games"
+    },
+
+    {
+        "name": "Flow",
+        "description": "Collect orbs while enjoying the music in this quick paced game",
+        "technologies": "Unity",
+        "picture": "/projectPics/flow.png",
+        "buttonText":"Visit Repository",
+        "link":"https://github.com/Light2Dark/flow",
+        "tag": "games"
+    },
+    
+    {
+        "name": "Pong",
+        "description": "Play Pong on mobile",
+        "technologies": "Unity",
+        "picture": "/projectPics/pong.png",
+        "buttonText":"Visit Repository",
+        "link":"https://github.com/Light2Dark/randomgames",
+        "tag": "games"
+    },
+
+    {
+        "name": "Computer Science in Sunway Uni 2022",
+        "description": "Article on studying computer science",
+        "technologies": "Writing",
+        "picture": "/projectPics/sunway.png",
+        "buttonText":"Read Article",
+        "link":"https://medium.com/@Shahmir/so-you-want-to-study-computer-science-in-sunway-uni-2022-58a7f8210919",
+        "tag": "writing"
     }
+
+    
 ]

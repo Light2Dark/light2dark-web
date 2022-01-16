@@ -15,7 +15,10 @@ interface Props {
 
 const NavStyled = styled(Nav)<{sidebarOpen: boolean}>`
     width: 100%;
-    position: ${props => props.sidebarOpen ? "fixed" : "static"};
+
+    @media screen and (max-width:768px) {
+        position: ${props => props.sidebarOpen ? "fixed" : "static"};
+    }
 `
 
 const Navbar = ({className, logoName, openSidebar}: Props): JSX.Element => {

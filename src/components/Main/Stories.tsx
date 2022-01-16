@@ -8,8 +8,9 @@ interface Props {
 const DivStyled = styled.div`
     position: relative;
     height: 200px;
-    background-color: #3d3d3d;
-    margin: 5% 8%;
+    background-color: black;
+    margin: 5% auto;
+    width: 80%;
 `
 
 const Stories = ({id}: Props): JSX.Element => {

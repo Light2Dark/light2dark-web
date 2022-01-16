@@ -1,35 +1,8 @@
 import styled from 'styled-components'
 import * as THREE from 'three'
-import ReactDOM from 'react-dom'
-import React, {useRef, useState, Suspense} from 'react'
+import {useRef, useState, Suspense} from 'react'
 import {Canvas, useFrame, useThree} from '@react-three/fiber'
-
-import {useGLTF, Cloud, Sky, OrbitControls} from "@react-three/drei"
-
-interface Props {
-    className?: string
-    colors?: string
-}
-
-function Box(props: JSX.IntrinsicElements['mesh']) {
-    const ref = useRef<THREE.Mesh>(null!)
-    const [hovered, hover] = useState(false)
-    const [clicked, click] = useState(false)
-    useFrame((state, delta) => (ref.current.rotation.x += 0.01))
-    
-    return(
-        <mesh
-        {...props}
-        ref = {ref}
-        scale = {clicked ? 1.5:1}
-        onClick = {(event) => click(!clicked)}
-        onPointerOver={(event) => hover(true)}
-        onPointerOut={(event) => hover(false)}>
-             <boxGeometry args = {[2,2,2]} />
-             <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />   
-        </mesh>
-    )
-}
+import {Cloud, Sky, OrbitControls} from "@react-three/drei"
 
 function Rose(props: JSX.IntrinsicElements["mesh"]) {
     return(
@@ -64,9 +37,14 @@ function Rig() {
 
 const CanvasStyled = styled(Canvas)`
     background-color: white;
+    display: block;
 `
 
-function Clouds_Sky(): JSX.Element {
+const DivStyled = styled.div`
+    
+`
+
+function CloudsSky(): JSX.Element {
     return(
         <>
             <ambientLight intensity={0.8} />
@@ -96,8 +74,8 @@ const Three = () : JSX.Element => {
                 <Rain />
             </CanvasStyled> */}
 
-            <CanvasStyled style={{height: "400px"}} camera={{position: [0,0,16], fov: 75}}>
-                <Clouds_Sky />    
+            <CanvasStyled style={{height: "300px"}} camera={{position: [0,0,16], fov: 75}}>
+                <CloudsSky />    
             </CanvasStyled>
         </>
     )

@@ -119,7 +119,6 @@ export const Nav = styled.nav`
     background: ${props => props.theme.colors.darkBlue};
     height: 80px;
     padding: 0.5rem calc((100vw - 1000px) / 2);
-    z-index: 10;
     position: sticky;
 
     @media screen and (max-width: 960px) {

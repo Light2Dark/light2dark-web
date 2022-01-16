@@ -44,7 +44,7 @@ const SidebarContainer = styled.aside<Props>`
     /* right: ${({isOpen}) => (isOpen ? "0px" : "-400px")}; */
     transform: ${({isOpen}) => (isOpen ? "translateX(0vw)" : "translateX(100vw)")};
     right: 0;
-    z-index: 9;
+    z-index: -1;
     width: min(65vw, 400px);
     height: 100vh;
     outline: 0px;

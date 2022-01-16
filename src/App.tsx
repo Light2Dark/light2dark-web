@@ -19,11 +19,11 @@ const MainStyled = styled.main<{blur: boolean}>`
 `
 
 const HeaderStyled = styled.header<{visible: boolean, sidebarOpen?: boolean}>`
-  /* position: sticky; */
   position: ${props => props.sidebarOpen ? "absolute" : "sticky"};
   transition: top 0.4s ease;
   top: ${props => props.visible ? "0px": "-80px"};
   width: 100%;
+  z-index: 2;
 `
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
 
   const handleScroll = debounce(() => {
       const currentScrollPos = window.scrollY // same as pageYOffset
-      setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10)
+      setVisible(sidebarOpen || (prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 60) || currentScrollPos < 10)
 
       setPrevScrollPos(currentScrollPos)
   }, 300) // 300 is the pause btwn triggering rerender

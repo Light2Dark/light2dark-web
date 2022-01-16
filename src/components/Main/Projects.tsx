@@ -8,11 +8,6 @@ interface Props {
     projects: ProjectItem[];
 }
 
-const TestDiv = styled.div`
-    height: 200px;
-    background-color: white;
-`
-
 const Project = ({id, projects}: Props) => {
     
     const [displayedProjects, setDisplayedProjects] = useState<ProjectItem[]>(projects)
@@ -32,7 +27,7 @@ const Project = ({id, projects}: Props) => {
     return (
         <>
             <DivStyled id={id}>
-                <Heading>Projects</Heading>
+                <Heading>Projects.</Heading>
                 <LinksDiv>
                     <AllLink onClick={() => handleDisplayedProjects("all")}>All.</AllLink>
                     <Link onClick={() => handleDisplayedProjects("web")}>web.</Link>
@@ -44,25 +39,18 @@ const Project = ({id, projects}: Props) => {
                 <FlexDiv>
                     {displayedProjects.map(({buttonText, name, link, description, technologies, picture, tag}) => {
 
-                        let pic = require(picture)
-                        console.log(pic)
-
                         return(
-                            <DivItem key= {name} buttonText={buttonText} description={description} link={link} technologies={technologies} picture={picture} name={name} tag={tag}>
+                            <DivItem key= {name} buttonText={buttonText} description={description} link={link} technologies={technologies} picture={process.env.PUBLIC_URL + picture} name={name} tag={tag}>
                                 <TextDiv>
                                     <Header3>{name}</Header3>
                                     {/* <h4>{technologies}</h4> */}
-                                    <Button><A href={link}>{buttonText}</A></Button>
+                                    <Button><A href={link} target="_blank" rel="noopener noreferrer">{buttonText}</A></Button>
                                     <P>{description}</P>    
                                 </TextDiv>  
                             </DivItem>       
                         )
                     })}
                 </FlexDiv>
-
-            <TestDiv>
-                <h3>Picture Test</h3>
-            </TestDiv>
 
             </DivStyled>
         </>

@@ -28,7 +28,7 @@ export const DivItem = styled.div<ProjectItem>`
     cursor: pointer;
     background-image: url(${props => props.picture});
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 
     @media screen and (max-width: 768px) {
@@ -64,12 +64,18 @@ export const TextDiv = styled.div`
 
     &:hover {
         opacity: 1;
-        backdrop-filter: brightness(0.5) blur(5px);
+        /* backdrop-filter: brightness(0.5) blur(5px); */
+        background-color: #00000086;
+        backdrop-filter: blur(5px);
     }
+
+    /* &::before {
+        backdrop-filter: blur(5px);
+    } */
 `
 
 export const Heading = styled.h2`
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-family: "Fredericka" !important;
     font-weight: lighter;
     text-align: center;
@@ -80,12 +86,21 @@ export const Header3 = styled.h3`
     font-size: 1.4em;
     margin-bottom: 15px;
     text-align: center;
+
+    background-color: black;
+    padding: 0 5px;
 `
 
 export const Button = styled.button`
     font-size: 1em;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    transition: all 0.1s ease;
+
+    &:hover {
+        box-shadow: 0px 3px 16px -1px rgba(0,0,0,0.52);
+        font-size: 1.05em;
+    }
 `
 
 export const A = styled.a`
@@ -94,5 +109,5 @@ export const A = styled.a`
 
 export const P = styled.p`
     text-align: center;
-    font-size: 0.8em;
+    font-size: 1.2em;
 `

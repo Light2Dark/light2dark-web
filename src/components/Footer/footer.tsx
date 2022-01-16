@@ -48,19 +48,19 @@ const Footer = () => {
     return (
         <StyledDiv>
             <DivItem>
-                <SocialIcon url="https://github.com/Light2Dark" bgColor="black" fgColor="#b6b6b6"/>
+                <SocialIcon url="https://github.com/Light2Dark" bgColor="black" fgColor="#b6b6b6" target="_blank" rel="noopener noreferrer" />
             </DivItem>
 
             <DivItem>
-                <SocialIcon url="https://www.instagram.com/shahms.v/"/>
+                <SocialIcon url="https://www.instagram.com/shahms.v/" target="_blank" rel="noopener noreferrer"/>
             </DivItem>
 
             <DivItem>
-                <SocialIcon url="https://open.spotify.com/user/12148851158?si=55f59fd923724d66"/>
+                <SocialIcon url="https://open.spotify.com/user/12148851158?si=55f59fd923724d66" target="_blank" rel="noopener noreferrer"/>
             </DivItem>
 
             <DivItem>
-                <SocialIcon url="https://www.linkedin.com/in/shahmir-varqha" />
+                <SocialIcon url="https://www.linkedin.com/in/shahmir-varqha" target="_blank" rel="noopener noreferrer" />
             </DivItem>
 
         </StyledDiv>

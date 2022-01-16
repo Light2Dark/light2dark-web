@@ -2,25 +2,27 @@ import styled from "styled-components"
 import React, {useRef} from "react"
 import emailjs from "@emailjs/browser"
 import Swal from "sweetalert2"
+import {Form, LeftDiv, RightDiv, StyledDiv, ElemDiv, Heading2, Label, Input, Textarea, Button, CenterDiv} from "./ContactElements"
 
 interface Props {
     id: string;
 }
 
 const DivStyled = styled.div`
-    margin: ${props => props.theme.margin};
+    margin: 5% auto;
     margin-bottom: 0;
     background-color: #cc3939;
     padding: 15px;
     border-radius: ${props => props.theme.borderRadius};
+    width: fit-content;
 
     * {
         color: black;
     }
-`
 
-const Form = styled.form`
-    
+    @media screen and (max-width: 768px) {
+        width: 80%;
+    }
 `
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICEID
@@ -56,26 +58,32 @@ const Contact = (props: Props) => {
 
     return(
         <DivStyled id = {props.id}>
-            <h2>Get In Touch</h2>
+            <Heading2>Get In Touch</Heading2>
             <Form ref={form} onSubmit={sendEmail}>
-                <div>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" tabIndex={1} required/>
-                </div>
+                <StyledDiv>
+                    <LeftDiv>
+                        <ElemDiv>
+                            <Label htmlFor="name">Name</Label>
+                            <Input type="text" name="name" id="name" tabIndex={1} required/>
+                        </ElemDiv>
 
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" tabIndex={2} required />
-                </div>
+                        <ElemDiv>
+                            <Label htmlFor="email">Email</Label>
+                            <Input type="email" name="email" id="email" tabIndex={2} required />
+                        </ElemDiv>
+                    </LeftDiv>
 
-                <div>
-                    <label htmlFor="message">Message</label>
-                    <textarea name="message" id="message" cols={40} rows={5} tabIndex={3} required placeholder="Leave a message"></textarea>
-                </div>
+                    <RightDiv>
+                        <ElemDiv>
+                            <Label htmlFor="message">Message</Label>
+                            <Textarea name="message" id="message" cols={40} rows={5} tabIndex={3} required placeholder="Leave a message"></Textarea>
+                        </ElemDiv>
+                    </RightDiv>
+                </StyledDiv>
 
-                <div>
-                    <button type="submit" tabIndex={4}>Submit</button>
-                </div>
+                <CenterDiv>
+                    <Button type="submit" tabIndex={4}>Submit</Button>
+                </CenterDiv>
             </Form>
         </DivStyled>
     )
