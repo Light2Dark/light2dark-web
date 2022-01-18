@@ -23,7 +23,7 @@ export const DivStyled = styled.div`
 `
 
 export const DivItem = styled.div<ProjectItem>`
-    height: 200px;
+    height: 230px;
     width: 50%;
     cursor: pointer;
     background-image: url(${props => props.picture});
@@ -33,6 +33,7 @@ export const DivItem = styled.div<ProjectItem>`
 
     @media screen and (max-width: 768px) {
         width: 100%;
+        height: 200px;
     }
 `
 

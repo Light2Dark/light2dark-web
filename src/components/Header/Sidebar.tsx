@@ -95,13 +95,13 @@ const Sidebar = ({isOpen}: Props) => {
                     </SidebarLink>
 
                     <SidebarLink
-                        to="experience"
+                        to="stories"
                         spy={true}
                         smooth={true}
                         offset={-70}
                         duration={500}
                     >
-                        experience.
+                        stories.
                     </SidebarLink>
 
                     <Contact>
